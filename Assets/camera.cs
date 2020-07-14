@@ -24,7 +24,6 @@ public class camera : MonoBehaviour
 
         //Vector2 v2 = (Input.GetAxis("MouseX"), Input.GetAxis("MouseY"));
 
-
         //make camera look at player
         transform.LookAt(target.transform.position);
 
@@ -32,3 +31,6 @@ public class camera : MonoBehaviour
         player.transform.LookAt(target.transform.position);
     }
 }
+
+
+

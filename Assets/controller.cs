@@ -31,20 +31,32 @@ public class controller : MonoBehaviour
     private bool jumped = false;
     //*************************************
 
-    // Start is called before the first frame update
-    void Start()
+    public float rotateSpeed;
+    Quaternion desiredRotation;
+    /*float speed; //in degrees
+
+        rigidbody.MoveRotation(Quaternion.RotateTowards(rigidbody.rotation, desiredRotation, speed * Time.deltaTime);*/
+
+        // Start is called before the first frame update
+        void Start()
     {
         currentSpeed = speed;
         //set rigidbody variable to player, script is connected to player
         rb = GetComponent<Rigidbody>();
 
+        //set desiredRotation as starting rotation
+        desiredRotation = transform.rotation;
         
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if (desiredRotation != transform.rotation)//https://answers.unity.com/questions/332001/how-to-reset-a-gamev-object-to-its-original-rotati.html
+        {
+            //rb.MoveRotation(Quaternion.RotateTowards(rb.rotation, desiredRotation, speed * Time.deltaTime));
+            transform.rotation = Quaternion.Slerp(transform.rotation, desiredRotation, Time.time * rotateSpeed);
+        }
 
         Vector3 movement;
 

@@ -71,6 +71,7 @@
     <Compile Include="Assets\birdAI.cs" />
     <Compile Include="Assets\camera.cs" />
     <Compile Include="Assets\controller.cs" />
+    <Compile Include="Assets\explodium.cs" />
     <Compile Include="Assets\flyInCircle.cs" />
     <Compile Include="Assets\speedsterScript.cs" />
     <Reference Include="UnityEngine">
